@@ -45,6 +45,9 @@ const store = new Vuex.Store({
     },
     setDarkness (state, val) {
       state.queryForm.darkness = val
+    },
+    setHumor (state, val) {
+      state.queryForm.humor = val
     }
   },
   actions: {
