@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    class="onboarding-container white d-flex flex-column"
-  >
+  <v-container class="wizard-container white d-flex flex-column">
     <transition name="slide" mode="out-in">
       <component
         :is="currentStepComponent"
@@ -21,14 +19,18 @@ import BottomNav from '../components/BottomNav'
 
 const wizardSteps = [
   'WizardIntro',
-  'WizardColors'
+  'WizardColors',
+  'WizardWokeness',
+  'WizardDarkness'
 ]
 
 export default {
   components: {
     BottomNav,
     WizardIntro: () => import('./wizard/WizardIntro.vue'),
-    WizardColors: () => import('./wizard/WizardColors.vue')
+    WizardColors: () => import('./wizard/WizardColors.vue'),
+    WizardWokeness: () => import('./wizard/WizardWokeness.vue'),
+    WizardDarkness: () => import('./wizard/WizardDarkness.vue')
   },
   data () {
     return {
@@ -52,7 +54,7 @@ export default {
 </script>
 
 <style>
-.onboarding-container {
+.wizard-container {
   height: 100%;
 }
 
