@@ -91,6 +91,7 @@ export default {
     goTo () {
       if (this.goToForm > 0) {
         this.page = this.goToForm
+        this.currentMovieIndex = 0
         this.loadMovies(this.page)
       }
     },
