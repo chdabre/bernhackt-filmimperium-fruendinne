@@ -4,7 +4,8 @@ import * as firebase from 'firebase/app'
 
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
-import Onboarding from '../views/Onboarding.vue'
+import ContextWizard from '../views/ContextWizard.vue'
+import MovieDetail from '../views/MovieDetail.vue'
 
 Vue.use(Router)
 
@@ -30,9 +31,18 @@ const router = new Router({
       }
     },
     {
-      path: '/onboarding',
-      name: 'onboarding',
-      component: Onboarding,
+      path: '/detail/:id',
+      name: 'detail',
+      component: MovieDetail,
+      props: true,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/wizard',
+      name: 'contextwizard',
+      component: ContextWizard,
       meta: {
         requiresAuth: true
       }

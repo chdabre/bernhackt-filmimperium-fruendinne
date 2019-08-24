@@ -2,9 +2,13 @@
   <v-container
     class="onboarding-container white d-flex flex-column"
   >
-    <component
-      :is="currentStepComponent"
-    />
+    <transition name="slide" mode="out-in">
+      <component
+        :is="currentStepComponent"
+        @nextPage="nextPage"
+      />
+    </transition>
+
     <BottomNav
       @nextPage="nextPage"
       @prevPage="prevPage"
@@ -15,16 +19,16 @@
 <script>
 import BottomNav from '../components/BottomNav'
 
-const onboardingSteps = [
-  'OnboardingGenres',
-  'OnboardingPeople'
+const wizardSteps = [
+  'WizardIntro',
+  'WizardColors'
 ]
 
 export default {
   components: {
     BottomNav,
-    OnboardingGenres: () => import('./onboarding/OnboardingGenres.vue'),
-    OnboardingPeople: () => import('./onboarding/OnboardingPeople.vue')
+    WizardIntro: () => import('./wizard/WizardIntro.vue'),
+    WizardColors: () => import('./wizard/WizardColors.vue')
   },
   data () {
     return {
@@ -33,7 +37,7 @@ export default {
   },
   computed: {
     currentStepComponent () {
-      return onboardingSteps[this.onboardingStepIndex]
+      return wizardSteps[this.onboardingStepIndex]
     }
   },
   methods: {
@@ -50,5 +54,20 @@ export default {
 <style>
 .onboarding-container {
   height: 100%;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+.slide-enter-to {
+  opacity: 1;
+}
+.slide-leave-to {
+  transform: translate(-100%, 0);
+  opacity: 0;
 }
 </style>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import fb from './firebaseConfig'
+import movieData from '../assets/moviedata'
 
 Vue.use(Vuex)
 
@@ -15,7 +16,19 @@ fb.auth.onAuthStateChanged(user => {
 const store = new Vuex.Store({
   state: {
     currentUser: null,
-    userProfile: {}
+    userProfile: {},
+    movieData,
+    queryForm: {
+      wokeness: 0,
+      romanticness: 0,
+      realism: 0,
+      darkness: 0,
+      complexity: 0,
+      abstractness: 0,
+      cinematography: 0,
+      suspense: 0,
+      humor: 0
+    }
   },
   mutations: {
     setCurrentUser (state, val) {
@@ -23,6 +36,9 @@ const store = new Vuex.Store({
     },
     setUserProfile (state, val) {
       state.userProfile = val
+    },
+    setRomanticness (state, val) {
+      state.queryForm.romanticness = val
     }
   },
   actions: {
