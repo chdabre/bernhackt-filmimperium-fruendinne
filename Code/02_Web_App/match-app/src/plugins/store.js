@@ -39,6 +39,12 @@ const store = new Vuex.Store({
     },
     setRomanticness (state, val) {
       state.queryForm.romanticness = val
+    },
+    setWokeness (state, val) {
+      state.queryForm.wokeness = val
+    },
+    setDarkness (state, val) {
+      state.queryForm.darkness = val
     }
   },
   actions: {

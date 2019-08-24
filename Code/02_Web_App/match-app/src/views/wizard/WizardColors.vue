@@ -2,7 +2,7 @@
   <div class="flex-grow-1">
     <h2>welche farben treffen auf deine aktuelle stimmung zu?</h2>
 
-    <v-row class="color-btns">
+    <v-row class="color-btns mt-12">
       <v-col
         cols="4"
         v-for="(key, index) in Object.keys(colors)"
