@@ -60,7 +60,8 @@ export default {
         complexity: 0,
         abstractness: 0,
         cinematography: 0,
-        suspense: 0
+        suspense: 0,
+        humor: 0
       },
       rated: []
     }
@@ -110,16 +111,9 @@ export default {
       }
 
       // reset form
-      this.currentRating = {
-        wokeness: 0,
-        romanticness: 0,
-        realism: 0,
-        darkness: 0,
-        complexity: 0,
-        abstractness: 0,
-        cinematography: 0,
-        suspense: 0
-      }
+      Object.keys(this.currentRating).forEach((key, index) => {
+        this.currentRating[key] = 0
+      })
 
       if (this.currentMovieIndex < 19) {
         this.currentMovieIndex++
