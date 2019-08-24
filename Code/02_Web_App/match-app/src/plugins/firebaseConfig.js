@@ -1,21 +1,14 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import * as firebase from 'firebase/app'
-
 // Add the Firebase products that you want to use
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/functions'
 
+import credentials from '../../credentials.json'
+
 // firebase init goes here
-const config = {
-  apiKey: 'AIzaSyDfRpzz9hXfnyh-hClUU-MvpOir7WIdUJI',
-  authDomain: 'match-app-bernhackt.firebaseapp.com',
-  databaseURL: 'https://match-app-bernhackt.firebaseio.com',
-  projectId: 'match-app-bernhackt',
-  storageBucket: '',
-  messagingSenderId: '29234653327',
-  appId: '1:29234653327:web:1184001cb8dbaadd'
-}
+const config = credentials.firebase
 firebase.initializeApp(config)
 
 // firebase utils

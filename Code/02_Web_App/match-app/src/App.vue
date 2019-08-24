@@ -2,13 +2,14 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="white"
+      elevate-on-scroll
 
-      v-if="true"
+      v-if="currentUser != null"
     >
-      <v-toolbar-title class="">
-      </v-toolbar-title>
+      <v-btn icon v-if="$route.name !== 'dashboard'" @click="$router.push('/dashboard')">
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
 
       <v-spacer></v-spacer>
       <v-btn icon @click="logout">
@@ -51,4 +52,12 @@ export default {
 
 <style lang="scss">
 @import "./style/app";
+.v-application {
+  background-color: white !important;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
 </style>

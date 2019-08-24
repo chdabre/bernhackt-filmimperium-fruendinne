@@ -3,7 +3,7 @@
     <!-- LOGO -->
     <v-row class="logo-container">
       <v-col class="d-flex justify-center flex-column">
-        <span class="display-1 white--text text-center">mätch</span>
+        <span class="playfair-title white--text text-center">connässeur</span>
       </v-col>
     </v-row>
 
@@ -255,4 +255,8 @@ export default {
     min-height: 216px;
   }
 }
+  .playfair-title{
+    font-family: 'Playfair Display', Serif;
+    font-size: 2rem;
+  }
 </style>
