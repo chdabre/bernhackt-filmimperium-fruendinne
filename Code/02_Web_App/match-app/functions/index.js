@@ -40,16 +40,19 @@ const generators = [
 ]
 
 exports.generateUserRecommendations = functions.https.onCall((data, context) => {
-  return db.collection('users').doc(context.auth.uid).get().then(res => {
-    // This is temporary
-    let userPreferences = {
-      loves: ['458156', '299537', '603'], // John wick ch.3 , Captain Marvel, Matrix
-      likes: ['24428', '335983', '124905'], // Avengers, Venom, Godzilla
-      hates: ['244786', '605', '284052']// Whiplash, Matrix Evolutions, Dr Strange
-    }
-
-    return {
-      uid: context.auth.uid
-    }
-  })
+  return {
+    test: 0
+  }
+  // return db.collection('users').doc(context.auth.uid).get().then(res => {
+  //   // This is temporary
+  //   let userPreferences = {
+  //     loves: ['458156', '299537', '603'], // John wick ch.3 , Captain Marvel, Matrix
+  //     likes: ['24428', '335983', '124905'], // Avengers, Venom, Godzilla
+  //     hates: ['244786', '605', '284052']// Whiplash, Matrix Evolutions, Dr Strange
+  //   }
+  //
+  //   return {
+  //     res
+  //   }
+  // })
 })

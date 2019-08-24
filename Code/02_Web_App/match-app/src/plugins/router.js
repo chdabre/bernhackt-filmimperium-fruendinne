@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app'
 
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import Onboarding from '../views/Onboarding.vue'
 
 Vue.use(Router)
 
@@ -27,6 +28,14 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/onboarding',
+      name: 'onboarding',
+      component: Onboarding,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })
@@ -39,7 +48,7 @@ router.beforeEach((to, from, next) => {
     next('/login')
   } else if (to.name === 'login' && currentUser) {
     next('/dashboard')
-  } else if (requiresAuth && currentUser) {
+  } if (requiresAuth && currentUser) {
     next()
   } else {
     next()

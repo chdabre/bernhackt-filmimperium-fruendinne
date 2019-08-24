@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <v-btn @click="generateUserRecommendations">Generate</v-btn>
-  </div>
+  <v-container>
+    Dashboard
+  </v-container>
 </template>
 
 <script>
-import fb from '../plugins/firebaseConfig'
+import { mapState } from 'vuex'
 
 export default {
   methods: {
-    generateUserRecommendations () {
-      const generateUserRecommendations = fb.functions.httpsCallable('generateUserRecommendations')
-      generateUserRecommendations().then(result => {
-        console.log(result)
-      })
+  },
+  computed: {
+    ...mapState(['userProfile'])
+  },
+  watch: {
+    userProfile () {
+      if (this.userProfile.onboarding) this.$router.push('/onboarding')
     }
   }
 }

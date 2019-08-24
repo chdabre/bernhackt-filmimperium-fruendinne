@@ -5,7 +5,7 @@
       color="primary"
       dark
 
-      v-if="currentUser"
+      v-if="true"
     >
       <v-toolbar-title class="">
       </v-toolbar-title>
@@ -36,7 +36,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'currentUser'
+      'currentUser',
+      'userProfile'
     ])
   },
   methods: {
