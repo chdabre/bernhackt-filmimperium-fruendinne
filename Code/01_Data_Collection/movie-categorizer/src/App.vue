@@ -13,18 +13,86 @@
       </div>
     </div>
     <div class="category-form">
-      <div
-        v-for="(key, index) in Object.keys(currentRating)"
-        :key="index"
-        class="category-form__field"
-      >
-        <div class="category-form__field--label">{{ key }}</div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">wokeness</div>
         <input
           class="category-form__field--input"
           type="range" min="0" max="100" step="5"
-          v-model="currentRating[key]"
+          v-model="currentRating.wokeness"
         >
-        <div class="category-form__field--number">{{ currentRating[key] }}</div>
+        <div class="category-form__field--number">{{ currentRating.wokeness }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">romanticness</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.romanticness"
+        >
+        <div class="category-form__field--number">{{ currentRating.romanticness }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">realism</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.realism"
+        >
+        <div class="category-form__field--number">{{ currentRating.realism }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">darkness</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.darkness"
+        >
+        <div class="category-form__field--number">{{ currentRating.darkness }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">complexity</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.complexity"
+        >
+        <div class="category-form__field--number">{{ currentRating.complexity }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">abstractness</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.abstractness"
+        >
+        <div class="category-form__field--number">{{ currentRating.abstractness }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">cinematography</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.cinematography"
+        >
+        <div class="category-form__field--number">{{ currentRating.cinematography }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">suspense</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.suspense"
+        >
+        <div class="category-form__field--number">{{ currentRating.suspense }}</div>
+      </div>
+      <div class="category-form__field">
+        <div class="category-form__field--label">humor</div>
+        <input
+          class="category-form__field--input"
+          type="range" min="0" max="100" step="5"
+          v-model="currentRating.humor"
+        >
+        <div class="category-form__field--number">{{ currentRating.humor }}</div>
       </div>
     </div>
     <button @click="nextMovie(false)">Next</button>
@@ -106,7 +174,7 @@ export default {
         // Add to rated list
         this.rated.push({
           ...this.currentMovie,
-          characteristics: this.currentRating
+          characteristics: Object.assign({}, this.currentRating)
         })
       }
 
