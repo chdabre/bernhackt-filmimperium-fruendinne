@@ -3,8 +3,7 @@
     <!-- LOGO -->
     <v-row class="logo-container">
       <v-col class="d-flex justify-center flex-column">
-        <img src="../assets/rehab_app_logo.svg" />
-        <span class="font-jura-20 white--text text-center">med&motion</span>
+        <span class="display-1 white--text text-center">mätch</span>
       </v-col>
     </v-row>
 
@@ -76,7 +75,7 @@
             :loading="loading"
             @click="login"
           >
-            {{ $t('login.form.loginBtnLabel') }}
+            {{ loginForm.isSignup ? $t('login.form.signupBtnLabel') : $t('login.form.loginBtnLabel') }}
           </v-btn>
         </v-form>
 
@@ -114,9 +113,18 @@
           </v-btn>
         </v-form>
 
+        <!-- Signup toggle link -->
+        <a
+          class="white--text d-block mt-4"
+          @click="loginForm.isSignup = !loginForm.isSignup"
+        >
+          {{ !loginForm.isSignup ? $t('login.signUp') : $t('login.backToLogin') }}
+        </a>
+
         <!-- Password reset toggle link -->
         <a
           class="white--text d-block mt-4"
+          v-if="!loginForm.isSignup"
           @click="showPasswordResetForm = !showPasswordResetForm"
         >
           {{ showPasswordResetForm ? $t('login.backToLogin') : $t('login.forgotPassword') }}
@@ -138,6 +146,7 @@ export default {
       passwordResetSuccess: false,
       loginForm: {
         valid: false,
+        isSignup: false,
         email: {
           field: '',
           rules: [
@@ -171,21 +180,48 @@ export default {
      */
     login () {
       if (this.$refs.loginForm.validate()) {
-        this.loading = true
-        fb.auth.signInWithEmailAndPassword(
-          this.loginForm.email.field,
-          this.loginForm.password.field
-        ).then(user => {
-          this.loading = false
-          this.error = null
-          this.$store.commit('setCurrentUser', user.user)
-          this.$store.dispatch('fetchUserProfile')
-          this.$router.push('/dashboard')
-        }).catch(err => {
-          this.loading = false
-          this.error = err
-        })
+        if (this.loginForm.isSignup) {
+          this.signUp()
+        } else {
+          this.loading = true
+          fb.auth.signInWithEmailAndPassword(
+            this.loginForm.email.field,
+            this.loginForm.password.field
+          ).then(user => {
+            this.loading = false
+            this.error = null
+            this.$store.commit('setCurrentUser', user.user)
+            this.$store.dispatch('fetchUserProfile')
+            this.$router.push('/dashboard')
+          }).catch(err => {
+            this.loading = false
+            this.error = err
+          })
+        }
       }
+    },
+    /**
+     * Send a request to create an account with Firebase, if the form is valid.
+     */
+    signUp () {
+      this.loading = true
+      fb.auth.createUserWithEmailAndPassword(
+        this.loginForm.email.field,
+        this.loginForm.password.field
+      ).then(user => {
+        return fb.usersCollection.doc(user.user.uid).set({
+          onboarding: true
+        })
+      }).then(() => {
+        this.$store.dispatch('fetchUserProfile')
+        this.$router.push('/dashboard')
+
+        this.loading = false
+        this.error = null
+      }).catch(err => {
+        this.loading = false
+        this.error = err
+      })
     },
     /**
      * Send a request to reset a users password, if the form is valid.

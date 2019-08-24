@@ -8,7 +8,6 @@
       v-if="currentUser"
     >
       <v-toolbar-title class="">
-        <img style="height: 1.2rem;" src="./assets/rehab_app_logo.svg" />
       </v-toolbar-title>
 
       <v-spacer></v-spacer>

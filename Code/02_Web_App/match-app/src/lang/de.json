@@ -1,3 +1,26 @@
 {
-  
+  "login": {
+    "form": {
+      "emailLabel": "E-Mail",
+      "passwordLabel": "Passwort",
+      "loginBtnLabel": "Login",
+      "signupBtnLabel": "Account erstellen",
+      "resetPasswordBtnLabel": "Passwort zurücksetzen"
+    },
+    "validation": {
+      "emailRequired": "Bitte geben Sie ihre E-Mail ein.",
+      "emailMustBeValid": "Diese E-Mail ist ungültig.",
+      "passwordRequired": "Bitte geben Sie ihr Passwort ein."
+    },
+    "forgotPassword": "Passwort vergessen",
+    "signUp": "Account erstellen",
+    "backToLogin": "Zurück zum Login",
+    "passwordResetSuccess": "Wir haben Ihnen eine E-Mail mit dem Link zum Zurücksetzen Ihres Passworts gesendet."
+  },
+  "fbError": {
+    "auth/invalid-email": "Diese E-Mail ist ungültig.",
+    "auth/wrong-password": "Dieses Passwort ist falsch oder der Nutzer hat kein Passwort.",
+    "auth/user-not-found": "Es existiert kein Nutzer mit dieser E-Mail.",
+    "auth/user-disabled": "Der Nutzer mit dieser E-Mail wurde deaktiviert."
+  }
 }
