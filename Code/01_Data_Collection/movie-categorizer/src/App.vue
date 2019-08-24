@@ -21,7 +21,7 @@
         <div class="category-form__field--label">{{ key }}</div>
         <input
           class="category-form__field--input"
-          type="range" min="0" max="100"
+          type="range" min="0" max="100" step="5"
           v-model="currentRating[key]"
         >
         <div class="category-form__field--number">{{ currentRating[key] }}</div>
@@ -30,7 +30,11 @@
     <button @click="nextMovie(false)">Next</button>
     <button @click="nextMovie(true)">Skip</button>
     <br/><br/>
+    <span>Go to Page <input type="number" v-model="goToForm" @keydown.enter="goTo"> <button @click="goTo">></button></span>
+    <br/>
     <a :href="dataHref" download="data.json">download JSON</a>
+    <br/>
+    <textarea :value="ratedJSON"/>
   </div>
 </template>
 
@@ -46,6 +50,7 @@ export default {
       ready: false,
       movies: [],
       page: 1,
+      goToForm: 0,
       currentMovieIndex: 0,
       currentRating: {
         wokeness: 0,
@@ -64,8 +69,11 @@ export default {
     currentMovie () {
       return this.movies[this.currentMovieIndex]
     },
+    ratedJSON () {
+      return JSON.stringify(this.rated)
+    },
     dataHref () {
-      let data = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.rated))
+      let data = 'text/json;charset=utf-8,' + encodeURIComponent(this.ratedJSON)
       return 'data:' + data
     }
   },
@@ -79,6 +87,12 @@ export default {
         let data = response.body
         this.movies = data.results
       })
+    },
+    goTo () {
+      if (this.goToForm > 0) {
+        this.page = this.goToForm
+        this.loadMovies(this.page)
+      }
     },
     nextMovie (skip) {
       if (!skip) {
@@ -145,6 +159,7 @@ export default {
   &__field {
     &--input {
       display: inline-block;
+      width: 200px;
     }
     &--label {
       display: inline-block;
