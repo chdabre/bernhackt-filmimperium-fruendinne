@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow-1 d-flex flex-column">
-    <h2 class="title-darkness" :class="{'white--text': 646 * darkness * .01 > 570}">magst du es lieber hell oder dunkel?</h2>
+    <h2 class="title-darkness" :class="{'white--text': 646 * darkness * .01 > 600}">lieber hell oder dunkel?</h2>
 
     <v-container>
       <v-row>
@@ -10,7 +10,8 @@
           max="100"
           v-model="darkness"
           thumb-label
-        ></v-slider>
+        >
+        </v-slider>
       </v-row>
     </v-container>
 
