@@ -2,10 +2,10 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="white"
+      flat
 
-      v-if="true"
+      v-if="currentUser != null"
     >
       <v-toolbar-title class="">
       </v-toolbar-title>
@@ -51,4 +51,7 @@ export default {
 
 <style lang="scss">
 @import "./style/app";
+.v-application {
+  background-color: white !important;
+}
 </style>
