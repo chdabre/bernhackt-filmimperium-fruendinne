@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style>
-.onboarding-container {
+.wizard-container {
   height: 100%;
 }
 
