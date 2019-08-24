@@ -21,7 +21,8 @@ const wizardSteps = [
   'WizardIntro',
   'WizardColors',
   'WizardWokeness',
-  'WizardDarkness'
+  'WizardDarkness',
+  'WizardHumor'
 ]
 
 export default {
@@ -30,7 +31,8 @@ export default {
     WizardIntro: () => import('./wizard/WizardIntro.vue'),
     WizardColors: () => import('./wizard/WizardColors.vue'),
     WizardWokeness: () => import('./wizard/WizardWokeness.vue'),
-    WizardDarkness: () => import('./wizard/WizardDarkness.vue')
+    WizardDarkness: () => import('./wizard/WizardDarkness.vue'),
+    WizardHumor: () => import('./wizard/WizardHumor.vue')
   },
   data () {
     return {
