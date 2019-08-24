@@ -70,8 +70,10 @@ export default {
         hate: []
       }
       this.genres.forEach(genre => {
-        if ()
+        if (genre.selected) genresChoice.love.push(genre)
+        else if (genre.hate) genresChoice.hate.push(genre)
       })
+      this.$store.dispatch('setGenresChoice', genresChoice)
     }
   }
 }
