@@ -20,6 +20,11 @@
   "storage": {
     "rules": "storage.rules"
   },
+  "emulators": {
+    "firestore": {
+      "port": "8081"
+    }
+  },
   "functions": {
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run lint"

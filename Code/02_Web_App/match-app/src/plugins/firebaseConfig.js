@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app'
 // Add the Firebase products that you want to use
 import 'firebase/auth'
 import 'firebase/firestore'
+import 'firebase/functions'
 
 // firebase init goes here
 const config = {
@@ -20,6 +21,8 @@ firebase.initializeApp(config)
 // firebase utils
 const db = firebase.firestore()
 const auth = firebase.auth()
+const functions = firebase.functions()
+functions.useFunctionsEmulator('http://localhost:5001')
 const currentUser = auth.currentUser
 
 // Additional settings for Firestore
@@ -33,6 +36,7 @@ const usersCollection = db.collection('users')
 export default {
   db,
   auth,
+  functions,
   currentUser,
   usersCollection
 }
