@@ -1,5 +1,5 @@
 # movie-categorizer
-Die Filminformationen werden von (The Movie DB)[https://www.themoviedb.org/] geholt. Jeder Film kann auf neun Kategorien bewertet werden. Man kann zwischen Kategorien und Genres auswählen. Es wird ein JSON File generiert, welche für die Web-App Connässeur generiert wird. 
+Die Filminformationen werden von [The Movie DB](https://www.themoviedb.org/) geholt. Jeder Film kann auf neun Kategorien bewertet werden. Man kann zwischen Kategorien und Genres auswählen. Es wird ein JSON File generiert, welche für die Web-App Connässeur generiert wird. 
 
 ## Project setup
 ```
