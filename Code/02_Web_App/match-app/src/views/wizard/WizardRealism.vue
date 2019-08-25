@@ -15,7 +15,13 @@
           <v-icon slot="append">mdi-account</v-icon>
         </v-slider>
       </v-row>
+      <v-row>
+      </v-row>
     </v-container>
+    <div class="lineDiv">
+      <img src="../../assets/realism_wizard.png" v-bind:style="{ opacity: opacityWizard, height: sizeWizard }">
+      <img src="../../assets/realism_boss.png" v-bind:style="{ opacity: opacityBoss, height: sizeBoss }">
+    </div>
   </div>
 </template>
 
@@ -30,9 +36,26 @@ export default {
     darkness () {
       this.$store.commit('setRealism', this.realism)
     }
+  },
+  computed: {
+    opacityBoss () {
+      return this.realism / 100
+    },
+    opacityWizard () {
+      return (100 - this.realism) / 100
+    },
+    sizeBoss () {
+      return 50 + this.realism
+    },
+    sizeWizard () {
+      return 150 - this.realism
+    }
   }
 }
 </script>
 
 <style lang="scss">
+  .lineDiv {
+    margin-top: 50px;
+  }
 </style>
