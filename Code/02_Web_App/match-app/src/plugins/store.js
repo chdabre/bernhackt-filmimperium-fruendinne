@@ -60,6 +60,9 @@ const store = new Vuex.Store({
     },
     setAbstractness (state, val) {
       state.queryForm.abstractness = val
+    },
+    setComplexity (state, val) {
+      state.queryForm.complexity = val
     }
   },
   actions: {

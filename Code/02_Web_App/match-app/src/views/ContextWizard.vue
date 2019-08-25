@@ -27,6 +27,7 @@ const wizardSteps = [
   'WizardCinematography',
   'WizardSuspense',
   'WizardAbstractness',
+  'WizardComplexity',
   'WizardResults'
 ]
 
@@ -42,6 +43,7 @@ export default {
     WizardCinematography: () => import('./wizard/WizardCinematography.vue'),
     WizardSuspense: () => import('./wizard/WizardSuspense.vue'),
     WizardAbstractness: () => import('./wizard/WizardAbstractness.vue'),
+    WizardComplexity: () => import('./wizard/WizardComplexity.vue'),
     WizardResults: () => import('./wizard/WizardResults.vue')
   },
   data () {

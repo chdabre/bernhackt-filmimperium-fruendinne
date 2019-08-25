@@ -1,10 +1,10 @@
 <template>
   <div class="flex-grow-1">
-    <h2 class="mt-12">unentschlossen?</h2>
+    <h1 class="mt-12" id="intro__title">unentschlossen?</h1>
     <br/>
-    <h2>ich kann dir mit der qual der wahl helfen.</h2>
+    <h2 class="intro-text">ich kann dir bei der qual der wahl helfen.</h2>
     <br/>
-    <h2>bitte beantworte die folgenden fragen.</h2>
+    <h2 class="intro-text">bitte beantworte dazu die nachfolgenden fragen.</h2>
 
     <v-btn
       class="mt-6"
@@ -16,3 +16,17 @@
     </v-btn>
   </div>
 </template>
+
+<style lang="scss">
+#intro__title{
+  font-family: 'Playfair Display Black';
+  font-size: 2.5rem;
+}
+
+.intro-text {
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+</style>
