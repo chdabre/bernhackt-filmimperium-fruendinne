@@ -1,4 +1,4 @@
-# Connässeur - Bernhackt Challenge from SPF
+# Connässeur - Bärnhäckt Challenge from SPF
 #### BärnHäckt Project Repository from Team "Fründinne" 
 
 ## Code
