@@ -5,6 +5,7 @@
     <div class="images">
       <img src="../../assets/cinematograhpy_potato.png" v-bind:style="{ opacity: opacity1, height: size1 + 'px' }">
       <img src="../../assets/cinematograhpy_fried_potatoes.png" v-bind:style="{ opacity: opacity2, height: size2 + 'px' }">
+      <img src="../../assets/cinematograhpy_photo_camera.png" v-bind:style="{ opacity: opacity3, height: size3 + 'px' }">
     </div>
 
     <v-container>
@@ -39,15 +40,30 @@ export default {
   },
   computed: {
     opacity1 () {
-      return (100 - this.cinematography) / 100
+      let opa1 = 33 - this.cinematography
+      if (opa1 > 0) {
+        return opa1 / 33
+      } else {
+        return 0
+      }
     },
     opacity2 () {
+      if (this.cinematography > 33 && this.cinematography < 66) {
+        return 33 - (this.cinematography * 2)
+      } else {
+        return 0
+      }
+    },
+    opacity3 () {
       return this.cinematography / 100
     },
     size1 () {
       return 150 - this.cinematography
     },
     size2 () {
+      return 50 + this.cinematography
+    },
+    size3 () {
       return 50 + this.cinematography
     }
   }
