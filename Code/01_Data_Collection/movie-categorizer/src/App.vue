@@ -99,15 +99,17 @@
     <button @click="nextMovie(true)">Skip</button>
     <br/><br/>
     <span>Go to Page <input type="number" v-model="goToForm" @keydown.enter="goTo"> <button @click="goTo">></button></span>
-    <br/>
-    <a :href="dataHref" download="data.json">download JSON</a>
-    <br/>
+    <select v-model="genre">
+      <option v-for="(genre, index) in genres" :key="index" :value="genre.id">{{ genre.name }}</option>
+    </select>
     <textarea :value="ratedJSON"/>
   </div>
 </template>
 
 <script>
 const apiKey = '4798eed7b83d0de78685239ce36d8689'
+
+const genres = [{ 'id': 28, 'name': 'Action' }, { 'id': 12, 'name': 'Adventure' }, { 'id': 16, 'name': 'Animation' }, { 'id': 35, 'name': 'Comedy' }, { 'id': 80, 'name': 'Crime' }, { 'id': 99, 'name': 'Documentary' }, { 'id': 18, 'name': 'Drama' }, { 'id': 10751, 'name': 'Family' }, { 'id': 14, 'name': 'Fantasy' }, { 'id': 36, 'name': 'History' }, { 'id': 27, 'name': 'Horror' }, { 'id': 10402, 'name': 'Music' }, { 'id': 9648, 'name': 'Mystery' }, { 'id': 10749, 'name': 'Romance' }, { 'id': 878, 'name': 'Science Fiction' }, { 'id': 10770, 'name': 'TV Movie' }, { 'id': 53, 'name': 'Thriller' }, { 'id': 10752, 'name': 'War' }, { 'id': 37, 'name': 'Western' }]
 
 export default {
   name: 'app',
@@ -131,6 +133,8 @@ export default {
         suspense: 0,
         humor: 0
       },
+      genre: 35,
+      genres,
       rated: []
     }
   },
@@ -151,7 +155,7 @@ export default {
   },
   methods: {
     loadMovies (page) {
-      this.$http.get(`${this.apiRoot}/discover/movie?sort_by=popularity.desc&page=${page}&api_key=${apiKey}`).then(response => {
+      this.$http.get(`${this.apiRoot}/discover/movie?sort_by=popularity.desc&with_genres=${this.genre}&page=${page}&api_key=${apiKey}`).then(response => {
         this.ready = true
         let data = response.body
         this.movies = data.results
@@ -192,6 +196,11 @@ export default {
         this.loadMovies(this.page)
         this.currentMovieIndex = 0
       }
+    }
+  },
+  watch: {
+    genre () {
+      this.loadMovies(this.page)
     }
   }
 }
