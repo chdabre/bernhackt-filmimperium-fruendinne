@@ -13,7 +13,8 @@ const tmdbRequest = function (path) {
 
 // Generates a movie list, in which a person either appears in the cast-list or crew-list.
 // Returns an array with the ids of the movies, sorted by popularity
-function generateMovieListByPeople(personID) {
+// eslint-disable-next-line no-unused-vars
+function generateMovieListByPeople (personID) {
   let movies = []
   console.log(`Searching for movies for person ${personID}`)
 
@@ -24,7 +25,7 @@ function generateMovieListByPeople(personID) {
       let crew = data.crew
 
       // merging two arrays together (and filter out duplicates):
-      let both = cast.concat(crew.filter(function (item) {return cast.indexOf(item) < 0 }))
+      let both = cast.concat(crew.filter(function (item) { return cast.indexOf(item) < 0 }))
       // console.log(`both (cast and crew): ${JSON.stringify(both)}`)
 
       // reverse sorting by popularity:

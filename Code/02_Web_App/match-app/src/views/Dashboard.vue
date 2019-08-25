@@ -49,7 +49,7 @@
 import { mapState } from 'vuex'
 import ContextWizard from './ContextWizard'
 
-const imgSource = 'https://image.tmdb.org/t/p/w500/'
+const imgSource = 'https://image.tmdb.org/t/p/w185/'
 const thumbSource = 'https://image.tmdb.org/t/p/w92/'
 
 export default {
