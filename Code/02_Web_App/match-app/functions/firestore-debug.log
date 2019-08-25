@@ -1,0 +1,10 @@
+API endpoint: http://localhost:8081
+WebChannel endpoint: http://localhost:8082
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8081
+
+Dev App Server is now running.
+
+*** shutting down gRPC server since JVM is shutting down
+*** server shut down
