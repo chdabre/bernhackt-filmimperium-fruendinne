@@ -3,26 +3,28 @@
     <h2>leichte kost oder lieber viel nachdenken?</h2>
 
     <v-container>
-      <v-row>
-        <v-slider
-          class="mt-12"
-          min="0"
-          max="100"
-          v-model="complexity"
-          thumb-label
-        >
-          <v-icon slot="prepend">mdi-auto-fix</v-icon>
-          <v-icon slot="append">mdi-account</v-icon>
-        </v-slider>
-      </v-row>
-      <v-row>
-      </v-row>
+
+      
     </v-container>
-    <div class="images">
+    <v-row class="mt-12 d-flex justify-center anim-container">
+    <div class="images" >
       <img src="../../assets/complexity_3.png" v-if="complexity>=75">
       <img src="../../assets/complexity_2.png" v-if="complexity<75 && complexity >25">
       <img src="../../assets/complexity_1.png" v-if="complexity<=25">    
     </div>
+    </v-row>
+    
+    <v-row>
+        <v-slider
+          class="mt-12"
+          id="sliderComplexity"
+          min="0"
+          max="100"
+          v-model="complexity"
+          thumb-label
+        >          
+        </v-slider>
+      </v-row>
   </div>
 </template>
 
@@ -59,4 +61,10 @@ export default {
   .images {
     margin-top: 5px;
   }
+
+  #sliderComplexity {
+    margin-top: 10px;
+  }
+ 
+
 </style>
