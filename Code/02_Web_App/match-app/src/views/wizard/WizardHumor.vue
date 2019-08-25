@@ -2,6 +2,12 @@
   <div class="flex-grow-1 d-flex flex-column">
     <h2>lachen, bis der bauch weh tut oder ernste miene?</h2>
 
+    <div class="lineDiv">`
+      <img src="../../assets/lineHappy.png" v-if="humor>=75">
+      <img src="../../assets/lineIndifferent.png" v-if="humor<75 && humor >25">
+      <img src="../../assets/lineSad.png" v-if="humor<=25">
+    </div>
+
     <v-container>
       <v-row>
         <v-slider
@@ -10,6 +16,7 @@
           v-model="humor"
           thumb-label
         ></v-slider>
+        
       </v-row>
     </v-container>
   </div>
@@ -23,7 +30,7 @@ export default {
     }
   },
   watch: {
-    wokeness () {
+    humor () {
       this.$store.commit('setHumor', this.humor)
     }
   }
@@ -31,4 +38,10 @@ export default {
 </script>
 
 <style lang="scss">
+  .lineDiv {
+    height: 100px;
+    margin-top: 50px;
+  }
+  
+ 
 </style>
