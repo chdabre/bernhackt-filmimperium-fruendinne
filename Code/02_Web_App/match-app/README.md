@@ -1,4 +1,5 @@
-# match-app
+# Connässeur 
+Wichtig ist, dass man im Project root das credentials.json von Firebase erstellt/einfügt. 
 
 ## Project setup
 ```
