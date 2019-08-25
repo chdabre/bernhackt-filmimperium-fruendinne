@@ -20,7 +20,7 @@
 <style lang="scss">
 #intro__title{
   font-family: 'Playfair Display Black';
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .intro-text {
