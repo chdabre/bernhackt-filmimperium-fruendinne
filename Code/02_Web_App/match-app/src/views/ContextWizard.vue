@@ -23,7 +23,9 @@ const wizardSteps = [
   'WizardWokeness',
   'WizardDarkness',
   'WizardRealism',
-  'WizardHumor'
+  'WizardHumor',
+  'WizardCinematography',
+  'WizardSuspense'
 ]
 
 export default {
@@ -34,7 +36,9 @@ export default {
     WizardWokeness: () => import('./wizard/WizardWokeness.vue'),
     WizardDarkness: () => import('./wizard/WizardDarkness.vue'),
     WizardRealism: () => import('./wizard/WizardRealism.vue'),
-    WizardHumor: () => import('./wizard/WizardHumor.vue')
+    WizardHumor: () => import('./wizard/WizardHumor.vue'),
+    WizardCinematography: () => import('./wizard/WizardCinematography.vue'),
+    WizardSuspense: () => import('./wizard/WizardSuspense.vue')
   },
   data () {
     return {
@@ -63,7 +67,7 @@ export default {
 }
 
 .slide-enter-active, .slide-leave-active {
-  transition: 1s;
+  transition: .5s;
 }
 .slide-enter {
   transform: translate(100%, 0);

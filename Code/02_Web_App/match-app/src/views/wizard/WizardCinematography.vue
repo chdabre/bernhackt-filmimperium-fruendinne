@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow-1 d-flex flex-column">
-    <h2>wie realistisch darfs sein?</h2>
+    <h2>wie wichtig ist dir gute cinematographie?</h2>
 
     <v-container>
       <v-row>
@@ -8,11 +8,11 @@
           class="mt-12"
           min="0"
           max="100"
-          v-model="realism"
+          v-model="cinematography"
           thumb-label
         >
-          <v-icon slot="prepend">mdi-auto-fix</v-icon>
-          <v-icon slot="append">mdi-account</v-icon>
+          <v-icon slot="prepend">mdi-carrot</v-icon>
+          <v-icon slot="append">mdi-camera</v-icon>
         </v-slider>
       </v-row>
     </v-container>
@@ -23,12 +23,12 @@
 export default {
   data () {
     return {
-      realism: 0
+      cinematography: 0
     }
   },
   watch: {
-    darkness () {
-      this.$store.commit('setRealism', this.realism)
+    cinematography () {
+      this.$store.commit('setCinematography', this.cinematography)
     }
   }
 }

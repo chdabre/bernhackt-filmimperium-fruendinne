@@ -51,6 +51,12 @@ const store = new Vuex.Store({
     },
     setHumor (state, val) {
       state.queryForm.humor = val
+    },
+    setCinematography (state, val) {
+      state.queryForm.cinematography = val
+    },
+    setSuspense (state, val) {
+      state.queryForm.suspense = val
     }
   },
   actions: {
