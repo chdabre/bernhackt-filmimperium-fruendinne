@@ -14,8 +14,7 @@ const chosen = {
   'humor': 8
 }
 
-function getIDs(chosenValues, data) {
-
+function getIDs (chosenValues, data) {
   let distances = []
 
   data.forEach(e => {
@@ -23,7 +22,7 @@ function getIDs(chosenValues, data) {
     obj['id'] = e.id
     obj['distance'] = distance(Object.values(chosenValues), Object.values(e.characteristics))
     distances.push(obj)
-  });
+  })
 
   let distancesSorted = distances.sort(function (a, b) {
     return a.distance - b.distance

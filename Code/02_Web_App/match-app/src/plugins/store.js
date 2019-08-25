@@ -57,6 +57,9 @@ const store = new Vuex.Store({
     },
     setSuspense (state, val) {
       state.queryForm.suspense = val
+    },
+    setAbstractness (state, val) {
+      state.queryForm.abstractness = val
     }
   },
   actions: {

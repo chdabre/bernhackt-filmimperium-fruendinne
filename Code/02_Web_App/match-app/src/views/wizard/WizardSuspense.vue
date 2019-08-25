@@ -37,7 +37,7 @@ export default {
   watch: {
     suspense () {
       this.value = []
-      for (let i = 0; i < Math.round(this.suspense / (100 / values.length)); i++) {
+      for (let i = 0; i < 1 + Math.round(this.suspense / (100 / (values.length - 1))); i++) {
         this.value.push(values[i])
       }
 

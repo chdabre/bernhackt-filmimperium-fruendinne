@@ -25,7 +25,9 @@ const wizardSteps = [
   'WizardRealism',
   'WizardHumor',
   'WizardCinematography',
-  'WizardSuspense'
+  'WizardSuspense',
+  'WizardAbstractness',
+  'WizardResults'
 ]
 
 export default {
@@ -38,7 +40,9 @@ export default {
     WizardRealism: () => import('./wizard/WizardRealism.vue'),
     WizardHumor: () => import('./wizard/WizardHumor.vue'),
     WizardCinematography: () => import('./wizard/WizardCinematography.vue'),
-    WizardSuspense: () => import('./wizard/WizardSuspense.vue')
+    WizardSuspense: () => import('./wizard/WizardSuspense.vue'),
+    WizardAbstractness: () => import('./wizard/WizardAbstractness.vue'),
+    WizardResults: () => import('./wizard/WizardResults.vue')
   },
   data () {
     return {
