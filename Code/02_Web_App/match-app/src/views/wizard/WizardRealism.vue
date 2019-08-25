@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grow-1 d-flex flex-column">
-    <h2>wie realistisch darfs sein?</h2>
+    <h2>wie realistisch darf es sein?</h2>
 
     <v-container>
       <v-row>
@@ -18,9 +18,9 @@
       <v-row>
       </v-row>
     </v-container>
-    <div class="lineDiv">
-      <img src="../../assets/realism_wizard.png" v-bind:style="{ opacity: opacityWizard, height: sizeWizard }">
-      <img src="../../assets/realism_boss.png" v-bind:style="{ opacity: opacityBoss, height: sizeBoss }">
+    <div class="images">
+      <img src="../../assets/realism_wizard.png" v-bind:style="{ opacity: opacityWizard, height: sizeWizard + 'px' }">
+      <img src="../../assets/realism_boss.png" v-bind:style="{ opacity: opacityBoss, height: sizeBoss + 'px' }">
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .lineDiv {
+  .images {
     margin-top: 50px;
   }
 </style>
