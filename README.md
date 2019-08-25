@@ -1,5 +1,5 @@
-# bernhackt-filmimperium-fruendinne
-BärnHäckt Project Repository Team "fründinne"
+# Connässeur - Bernhackt Challenge from SPF
+#### BärnHäckt Project Repository from Team "Fründinne" 
 
 ## Code
 In diesem Ordner befinden sich die zwei Unterordner: 01_Data_Collection und 02_Web_App.
@@ -21,10 +21,10 @@ Präsentation für unsern Pitch am 25.08.2019
 ## Misc
 Unser Teamlogo "fründinne"
 
-## Contributors
-@chdabre (Dario Breitenstein)
-@nightbehaviour (Hanna Lisa Franz)
-@AndiSwiss (Andreas Ambühl)
-@lucafluri (Luca Fluri)
-@jessicachrist (Jessica Christ)
+## Contributors (Team Fründinne)
+[@chdabre](https://github.com/chdabre) (Dario Breitenstein)  
+[@nightbehaviour](https://github.com/nightbehaviour) (Hanna Lisa Franz)  
+[@AndiSwiss](https://github.com/AndiSwiss) (Andreas Ambühl)  
+[@lucafluri](https://github.com/lucafluri) (Luca Fluri)  
+[@jessicachrist](https://github.com/jessicachrist) (Jessica Christ)
 
